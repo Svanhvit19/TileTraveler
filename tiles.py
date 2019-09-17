@@ -1,39 +1,43 @@
-#start
+
+
+
+def findOutWhereHeCanGo(xCoordinates, yCoordinates, direction):
+    if (checkIfValidDirection(xCoordinates, yCoordinates, direction) == True):
+        #Do some stuff
+        if (direction == 'n'):
+            yCoordinates = yCoordinates - 1
+        return xCoordinates, yCoordinates
+    else:
+        return xCoordinates, yCoordinates
+
+def checkIfValidDirection(xCoordinates, yCoordinates, direction):
+    #All the if statements to check if it is a valid direction, 9 in total
+
+
+    return True
+
+def checkIfValidLetter(letter):
+    letter = letter.toLower()
+    if (letter == 'n' or letter == 's' or letter == 'e' or letter == 'w'):
+        return True
+    else:
+        print('Not a valid direction')
+        return False
+
+
 x = 1
 y = 1
-#input
+while True:
+    if (x == 3 and y == 3):
+        print('Victory')
+        break
+    direction = input("Input a direction: ")
+    if (checkIfValidLetter(direction) == True):
+        x, y = findOutWhereHeCanGo(x, y, direction)
 
-#move
-def north(x,y):
-    y += 1
-    return (x,y)
+    
 
-def south(x,y):
-    y -= 1
-    return x,y
 
-def east(x,y):
-    x += 1
-    return (x,y)
 
-def west(x,y):
-    x -= 1
-    return x,y
 
-direction = input("Direction: ")
-#while 0 < x <= 3 and 0 < y <= 3:
-if direction == "N" or "n":
-    place = north(x,y)
-    print(place)
-elif direction == "S" or "s":
-    place = south(x,y)
-    print(place)
-elif direction == "E" or "e":
-    place = east(x,y)
-    print(place)
-elif direction == "W" or "w":
-    place = west(x,y)
-    print(place)
-else:
-    print("Not a valid direction")
-    #direction = input("Direction: ")
+
