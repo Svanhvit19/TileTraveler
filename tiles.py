@@ -24,7 +24,7 @@ def checkIfValidLetter(letter):
         print('Not a valid direction')
         return False
 
-
+#Github example change
 x = 1
 y = 1
 while True:
